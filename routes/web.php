@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TaskController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +20,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+ //Route::get("/categories", [CategoryController::class , 'index'])->middleware("auth");
+ //Route::get("/categories/create", [CategoryController::class , 'create'])->middleware("auth");
+ //Route::post("/categories", [CategoryController::class , 'store'])->middleware("auth");
+ //Route::get("/categories/{id}/edit", [CategoryController::class , 'edit'])->middleware("auth");
+ //Route::put("/categories/{id}", [CategoryController::class , 'update'])->middleware("auth");
+ //Route::delete("/categories/{id}", [CategoryController::class , 'destroy'])->middleware("auth");
+
+ //Route::resource("categories", CategoryController::class)->except(['show'])->middleware("auth");
+ //Route::resource("tasks", CategoryController::class)->except(['show'])->middleware("auth");
+
+ Route::resource("categories", CategoryController::class)->except(['show'])->middleware("auth");
+
+require __DIR__ . '/auth.php';

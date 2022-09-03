@@ -128,10 +128,12 @@
     </a>
   </li>
   <li class="nav-item">
-    
-    <form action="{{ url('logout') }}" method="Post" class="nav-link">
-                            @csrf
-                            <input type="submit"  name="" value="Log Out">
-        </form>
+    {{-- <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+      <i class="fas fa-th-large"></i>
+    </a> --}}
+    <form action="{{ url('/logout') }}" method="POST" class="nav-link">
+      @csrf
+      <input type="submit" name="" value="Log Out">
+  </form>
   </li>
 </ul>

@@ -10,10 +10,18 @@
       </a>
     </li>
     <li class="nav-item">
-      <a href="{{ url('/products') }}" class="nav-link">
+      <a href="{{ url('/categories') }}" class="nav-link">
         <i class="nav-icon fas fa-tachometer-alt"></i>
         <p>
-          Products
+        Categories
+        </p>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="{{ url('/tasks') }}" class="nav-link {{ request()->is('tasks*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-tachometer-alt"></i>
+        <p>
+          Tasks
         </p>
       </a>
     </li>
